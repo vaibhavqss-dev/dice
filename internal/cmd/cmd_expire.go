@@ -7,12 +7,13 @@ import (
 	"strconv"
 	"time"
 
+	flg "github.com/dicedb/dice/internal"
 	"github.com/dicedb/dice/internal/errors"
 	"github.com/dicedb/dice/internal/shardmanager"
 	dstore "github.com/dicedb/dice/internal/store"
 	"github.com/dicedb/dicedb-go/wire"
 )
-
+	 
 var cEXPIRE = &CommandMeta{
 	Name:      "EXPIRE",
 	Syntax:    "EXPIRE key seconds [NX | XX]",
@@ -43,8 +44,11 @@ OK true
 localhost:7379> EXPIRE k2 20 NX
 OK false
 	`,
-	Eval:    evalEXPIRE,
-	Execute: executeEXPIRE,
+	Eval:     evalEXPIRE,
+	Execute:  executeEXPIRE,
+	Arity:    -3,
+	KeySpecs: flg.KeySpecs{BeginIndex: 1, Step: 1, Flags: flg.RW | flg.UPDATE},
+	GetFlags: flg.SetGetKeys,
 }
 
 func init() {

@@ -8,7 +8,6 @@ import (
 	"time"
 
 	"github.com/dicedb/dice/testutils"
-	"github.com/dicedb/dicedb-go/wire"
 	"github.com/stretchr/testify/assert"
 )
 

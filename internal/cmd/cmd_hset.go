@@ -4,6 +4,7 @@
 package cmd
 
 import (
+			flg "github.com/dicedb/dice/internal"
 	"github.com/dicedb/dice/internal/errors"
 	"github.com/dicedb/dice/internal/object"
 	"github.com/dicedb/dice/internal/shardmanager"
@@ -30,6 +31,9 @@ OK 2
 	`,
 	Eval:    evalHSET,
 	Execute: executeHSET,
+	Arity:    -4,
+	KeySpecs: flg.KeySpecs{BeginIndex: 1, Flags: flg.RW | flg.UPDATE},
+	GetFlags: flg.SetGetKeys,
 }
 
 func init() {

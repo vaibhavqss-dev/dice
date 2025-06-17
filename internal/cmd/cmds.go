@@ -10,6 +10,7 @@ import (
 	"time"
 
 	"github.com/dgryski/go-farm"
+	flg "github.com/dicedb/dice/internal"
 	"github.com/dicedb/dice/internal/errors"
 	"github.com/dicedb/dice/internal/object"
 	"github.com/dicedb/dice/internal/shardmanager"
@@ -63,7 +64,8 @@ func (c *Cmd) Execute(sm *shardmanager.ShardManager) (*CmdRes, error) {
 		slog.Any("cmd", c.String()),
 		slog.String("client_id", c.ClientID),
 		slog.String("mode", c.Mode),
-		slog.Any("took_ns", time.Since(start).Nanoseconds()))
+		slog.Any("took_ns", time.Since(start).Nanoseconds()),
+		slog.Any("error", err))
 	return res, err
 }
 
@@ -81,6 +83,9 @@ type CommandMeta struct {
 	IsWatchable bool
 	Eval        func(c *Cmd, s *store.Store) (*CmdRes, error)
 	Execute     func(c *Cmd, sm *shardmanager.ShardManager) (*CmdRes, error)
+	KeySpecs    flg.KeySpecs
+	Arity       int
+	GetFlags    func(args []string, ks *flg.KeySpecs)
 }
 
 type CmdRegistry struct {
@@ -94,7 +99,7 @@ func Total() int {
 func (r *CmdRegistry) AddCommand(cmd *CommandMeta) {
 	r.CommandMetas[cmd.Name] = cmd
 }
-
+				   
 var CommandRegistry CmdRegistry = CmdRegistry{
 	CommandMetas: map[string]*CommandMeta{},
 }

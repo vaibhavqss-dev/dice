@@ -33,27 +33,27 @@ type TestCase struct {
 func assertEqualResult(t *testing.T, expected interface{}, result *wire.Result, valueExtractor ValueExtractorFn) {
 	var actual interface{}
 	if valueExtractor != nil {
-		actual = valueExtractor(result)
+	 	actual = valueExtractor(result)
 	}
 	switch v := expected.(type) {
 	case string:
-		assert.Equal(t, v, actual)
+	 	assert.Equal(t, v, actual)
 	case int64:
-		assert.Equal(t, v, actual)
+	 	assert.Equal(t, v, actual)
 	case float64:
-		assert.Equal(t, v, actual)
+	 	assert.Equal(t, v, actual)
 	case int:
-		assert.Equal(t, int64(v), actual)
+	 	assert.Equal(t, int64(v), actual)
 	case bool:
-		assert.Equal(t, v, actual)
+	 	assert.Equal(t, v, actual)
 	case nil:
-		assert.Equal(t, v, actual)
+	 	assert.Equal(t, v, actual)
 	case error:
-		assert.Equal(t, v.Error(), result.Message)
+	 	assert.Equal(t, v.Error(), result.Message)
 	case []string:
-		assert.ElementsMatch(t, v, actual)
+	 	assert.ElementsMatch(t, v, actual)
 	default:
-		assert.Equal(t, v, actual)
+	 	assert.Equal(t, v, actual)
 	}
 }
 

@@ -677,6 +677,7 @@ var (
 		NewEval:    evalRPOP,
 		IsMigrated: true,
 		Arity:      2,
+		KeySpecs:   KeySpecs{BeginIndex: 1},
 	}
 	llenCmdMeta = DiceCmdMeta{
 		Name: "LLEN",
@@ -687,6 +688,7 @@ var (
 		NewEval:    evalLLEN,
 		IsMigrated: true,
 		Arity:      1,
+		KeySpecs:   KeySpecs{BeginIndex: 1},
 	}
 	// Internal command used to spawn request across all shards (works internally with DBSIZE command)
 	singleDBSizeCmdMeta = DiceCmdMeta{
@@ -725,6 +727,7 @@ var (
 		IsMigrated: true,
 		NewEval:    evalBITPOS,
 		Arity:      -2,
+		KeySpecs:   KeySpecs{BeginIndex: 1},
 	}
 	saddCmdMeta = DiceCmdMeta{
 		Name: "SADD",
@@ -802,6 +805,7 @@ var (
 		NewEval:    evalHLEN,
 		IsMigrated: true,
 		Arity:      2,
+		KeySpecs:   KeySpecs{BeginIndex: 1},
 	}
 	jsonnumincrbyCmdMeta = DiceCmdMeta{
 		Name:       "JSON.NUMINCRBY",
@@ -814,7 +818,7 @@ var (
 	dumpkeyCMmdMeta = DiceCmdMeta{
 		Name: "DUMP",
 		Info: `Serialize the value stored at key and return it to the user.
-				The returned value can be synthesized back into the key using the RESTORE command.`,
+				The returned value can be synthesized back into the key using the DUMP command.`,
 		NewEval:    evalDUMP,
 		IsMigrated: true,
 		Arity:      1,
@@ -851,6 +855,7 @@ var (
 		IsMigrated: true,
 		NewEval:    evalAPPEND,
 		Arity:      2,
+		KeySpecs:   KeySpecs{BeginIndex: 1},
 	}
 	zaddCmdMeta = DiceCmdMeta{
 		Name: "ZADD",
