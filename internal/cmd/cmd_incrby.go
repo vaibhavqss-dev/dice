@@ -38,7 +38,6 @@ OK "50"
 	Execute:  executeINCRBY,
 	Arity:    2,
 	KeySpecs: flg.KeySpecs{BeginIndex: 1, Flags: flg.UPDATE | flg.ACCESS | flg.RW},
-	GetFlags: flg.SetGetKeys,
 }
 
 func init() {

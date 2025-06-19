@@ -48,7 +48,6 @@ OK false
 	Execute:  executeEXPIRE,
 	Arity:    -3,
 	KeySpecs: flg.KeySpecs{BeginIndex: 1, Step: 1, Flags: flg.RW | flg.UPDATE},
-	GetFlags: flg.SetGetKeys,
 }
 
 func init() {

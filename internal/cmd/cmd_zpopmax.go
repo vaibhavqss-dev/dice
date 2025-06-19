@@ -44,7 +44,6 @@ OK
 	Execute:  executeZPOPMAX,
 	Arity:    -2,
 	KeySpecs: flg.KeySpecs{BeginIndex: 1, Flags: flg.RW | flg.ACCESS | flg.DELETE},
-	GetFlags: flg.SetGetKeys,
 }
 
 func init() {

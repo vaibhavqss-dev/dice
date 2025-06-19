@@ -51,7 +51,6 @@ OK 1
 	Execute:  executeZADD,
 	Arity:    -4,		  	
 	KeySpecs: flg.KeySpecs{BeginIndex: 1, Flags: flg.RW | flg.UPDATE},
-	GetFlags: flg.SetGetKeys,
 }						  	
 
 func init() {

@@ -35,7 +35,6 @@ OK none
 	Execute:  executeTYPE,
 	Arity:    1,
 	KeySpecs: flg.KeySpecs{BeginIndex: 1, Flags: flg.RO},
-	GetFlags: flg.SetGetKeys,
 }
 
 func init() {

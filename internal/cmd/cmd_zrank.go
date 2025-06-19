@@ -44,7 +44,6 @@ OK 0) 0, daniel
 	IsWatchable: true,
 	Arity:       -3,
 	KeySpecs:    flg.KeySpecs{BeginIndex: 1, Flags: flg.RO | flg.ACCESS},
-	GetFlags:    flg.SetGetKeys,
 }
 
 func init() {

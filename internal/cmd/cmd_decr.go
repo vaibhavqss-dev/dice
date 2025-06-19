@@ -37,7 +37,6 @@ ERR wrongtype operation against a key holding the wrong kind of value
 	Execute:  executeDECR,
 	Arity:    2,
 	KeySpecs: flg.KeySpecs{BeginIndex: 1, Flags: flg.RM | flg.ACCESS | flg.UPDATE},
-	GetFlags: flg.SetGetKeys,
 }
 
 func init() {

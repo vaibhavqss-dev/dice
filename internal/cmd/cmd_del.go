@@ -29,7 +29,6 @@ OK 2`,
 	Execute:  executeDEL,
 	Arity:    -2,
 	KeySpecs: flg.KeySpecs{BeginIndex: 1, Flags: flg.RM | flg.DELETE},
-	GetFlags: flg.SetGetKeys,
 }
 
 func init() {

@@ -33,7 +33,6 @@ OK 1744451192
 	Execute:  executeEXPIRETIME,
 	Arity:    2,
 	KeySpecs: flg.KeySpecs{BeginIndex: 1, Flags: flg.RO | flg.ACCESS},
-	GetFlags: flg.SetGetKeys,
 }
 
 func init() {

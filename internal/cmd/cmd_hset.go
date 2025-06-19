@@ -33,7 +33,6 @@ OK 2
 	Execute: executeHSET,
 	Arity:    -4,
 	KeySpecs: flg.KeySpecs{BeginIndex: 1, Flags: flg.RW | flg.UPDATE},
-	GetFlags: flg.SetGetKeys,
 }
 
 func init() {

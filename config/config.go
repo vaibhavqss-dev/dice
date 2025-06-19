@@ -53,7 +53,7 @@ type DiceDBConfig struct {
 	Username string `mapstructure:"username" default:"dicedb" description:"the username to use for authentication"`
 	Password string `mapstructure:"password" default:"" description:"the password to use for authentication"`
 
-	LogLevel string `mapstructure:"log-level" default:"info" description:"the log level"`
+	LogLevel string `mapstructure:"log-level" default:"debug" description:"the log level"`
 
 	EnableWatch bool `mapstructure:"enable-watch" default:"false" description:"enable support for .WATCH commands and real-time reactivity"`
 	MaxClients  int  `mapstructure:"max-clients" default:"20000" description:"the maximum number of clients to accept"`

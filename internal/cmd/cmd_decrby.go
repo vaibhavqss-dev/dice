@@ -37,7 +37,6 @@ OK "-50"
 	Execute:  executeDECRBY,
 	Arity:    3,
 	KeySpecs: flg.KeySpecs{BeginIndex: 1, Flags: flg.RM | flg.ACCESS | flg.UPDATE},
-	GetFlags: flg.SetGetKeys,
 }
 
 func init() {

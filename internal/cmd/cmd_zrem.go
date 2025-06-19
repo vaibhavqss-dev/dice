@@ -40,7 +40,6 @@ OK
 	Execute:  executeZREM,
 	Arity:    -3,
 	KeySpecs: flg.KeySpecs{BeginIndex: 1, Flags: flg.RW | flg.DELETE},
-	GetFlags: flg.SetGetKeys,
 }
 
 func init() {

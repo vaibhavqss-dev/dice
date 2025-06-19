@@ -35,7 +35,6 @@ OK "1"
 	Execute:  executeINCR,
 	Arity:    2,
 	KeySpecs: flg.KeySpecs{BeginIndex: 1, Flags: flg.ACCESS | flg.RW | flg.UPDATE},
-	GetFlags: flg.SetGetKeys,
 }
 
 func init() {

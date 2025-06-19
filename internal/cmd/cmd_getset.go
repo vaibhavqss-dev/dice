@@ -32,7 +32,6 @@ OK "v2"
 	Eval:     evalGETSET,
 	Execute:  executeGETSET,
 	Arity:    3,
-	GetFlags: flg.SetGetKeys,
 	KeySpecs: flg.KeySpecs{BeginIndex: 1, Flags: flg.RW | flg.ACCESS | flg.UPDATE},
 }
 
